@@ -9,7 +9,7 @@ pipeline {
     gitEmail = 'ktkt13134@gmail.com'
     githubCredential = 'git_cre'
     dockerHubRegistry = '10.7.7.119/sbimage'
-    githubWeb = ‘https://github.com/hjlee113/sb_code.git’
+    githubWeb = 'https://github.com/hjlee113/sb_code.git'
   }
   stages {
     stage('Checkout Github') {
