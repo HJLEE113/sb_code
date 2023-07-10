@@ -73,7 +73,7 @@ pipeline {
           sh "docker rmi ${dockerHubRegistry}:latest"
         }
       }
-    }
+   } 
 
 
     
