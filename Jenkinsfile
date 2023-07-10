@@ -8,7 +8,7 @@ pipeline {
     gitName = 'hjlee113'
     gitEmail = 'ktkt13134@gmail.com'
     githubCredential = 'git_cre'
-    dockerHubRegistry = '10.7.7.119/sbimage'
+    dockerHubRegistry = '10.7.7.119:5000/sbimage'
     githubWeb = 'https://github.com/hjlee113/sb_code.git'
   }
   stages {
@@ -38,6 +38,21 @@ pipeline {
        }
      }
    }
+  stage('Docker Image Build') {
+     steps {
+         sh "docker build -t ${dockerHubRegistry}:${currentBuild.number} ."
+         sh "docker build -t ${dockerHubRegistry}:latest ."
+         }
+     post {
+       failure {
+         echo 'Docker image build failure'
+       }
+       success {
+         echo 'Docker image build success'  
+       }
+     }
+   }
+
 
     
   }
