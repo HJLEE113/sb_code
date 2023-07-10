@@ -5,7 +5,7 @@ pipeline {
     maven 'my_maven'
   }
   environment {
-    gitName = 'github.com/hjlee113'
+    gitName = 'hjlee113'
     gitEmail = 'ktkt13134@gmail.com'
     githubCredential = 'git_cre'
     dockerHubRegistry = '10.7.7.119/sbimage'
