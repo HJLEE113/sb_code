@@ -76,6 +76,7 @@ pipeline {
       }
    } 
 
+
   stage('Docker Container Deploy') {
         steps {
             sh "docker rm -f spring"
